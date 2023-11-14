@@ -1,0 +1,11 @@
+{
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"extends": ["react-app", "eslint:recommended", "plugin:react/recommended", "prettier"],
+	"plugins": ["react"],
+	"rules": {
+		"no-console": ["warn", { "allow": ["info", "error", "warn"] }],
+		"no-nested-ternary": ["warn"]
+	}
+}
