@@ -5,6 +5,8 @@ import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router } from 'react-router-dom'
 import AppRouter from './router'
 import { GlobalStyle } from './utils/globalStyle'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
@@ -13,9 +15,11 @@ const root = ReactDOM.createRoot(
 root.render(
 	<React.StrictMode>
 		<GlobalStyle />
+		<Header />
 		<Router>
 			<AppRouter />
 		</Router>
+		<Footer />
 	</React.StrictMode>
 )
 

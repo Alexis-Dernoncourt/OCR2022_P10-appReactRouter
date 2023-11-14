@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Title } from './style'
+import { HomeContainer, Title } from './style'
 import { fetchApiDatas } from '../../utils/api'
 import { ApiProps } from '../../types'
 
@@ -23,7 +23,7 @@ export default function Home() {
 	}, [apiDatas])
 
 	return (
-		<Container>
+		<HomeContainer>
 			<Title>Home</Title>
 
 			{apiDatas ? apiDatas.map(item => (
@@ -36,6 +36,6 @@ export default function Home() {
 			) : null}
 
 			{apiError && <p>Il y a eu une erreur...</p>}
-		</Container>
+		</HomeContainer>
 	)
 }

@@ -7,10 +7,10 @@ export const Title = styled.h1`
   color: ${colors.primaryText};
 `
 
-export const HomeContainer = styled.section`
-  padding: 4em;
-  background: ${colors.lightGrey};
+export const FooterContainer = styled.section`
+  padding: 2rem 4rem;
+  background: ${colors.lightGreyAccent};
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 `

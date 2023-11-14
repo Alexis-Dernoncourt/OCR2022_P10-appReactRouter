@@ -7,7 +7,7 @@ export const Title = styled.h1`
   color: ${colors.primaryText};
 `
 
-export const HomeContainer = styled.section`
+export const AboutContainer = styled.section`
   padding: 4em;
   background: ${colors.lightGrey};
   display: flex;
