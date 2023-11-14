@@ -4,7 +4,7 @@ import { LogementsContainer, Title } from './style'
 
 export default function Logements() {
 	useEffect(() => {
-		console.log("coucou (Logements.tsx)")
+		// console.log("coucou (Logements.tsx)")
 	}, [])
 
 	return (

@@ -1,10 +1,13 @@
 import React from 'react'
-import { HeaderContainer, Title } from './style'
+import Logo from './Logo'
+import Menu from './Menu'
+import { HeaderContainer } from './style'
 
 export default function Header() {
   return (
     <HeaderContainer>
-      <Title>Header</Title>
+      <Logo $isFooter={false} />
+      <Menu />
     </HeaderContainer>
   )
 }

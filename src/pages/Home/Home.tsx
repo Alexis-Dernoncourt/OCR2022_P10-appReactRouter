@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { HomeContainer, Title } from './style'
+import { HomeContainer } from './style'
 import { fetchApiDatas } from '../../utils/api'
 import { ApiProps } from '../../types'
-
+import Banner from '../../components/Banner/Banner'
+import Card from '../../components/Cards/Card'
+import CardsLayout from '../../components/Cards/CardsLayout'
 
 export default function Home() {
 	const [apiDatas, setApiDatas] = useState<ApiProps | null>()
@@ -24,11 +26,12 @@ export default function Home() {
 
 	return (
 		<HomeContainer>
-			<Title>Home</Title>
-
-			{apiDatas ? apiDatas.map(item => (
-				<li key={item.id}>{item.location}</li>
-			)) : null}
+			<Banner />
+			<CardsLayout>
+				{apiDatas ? apiDatas.map(item => (
+					<Card key={item.id} item={item} />
+				)) : null}
+			</CardsLayout>
 
 			{!apiDatas && !apiError ? (
 				// TODO: add skeleton on loading

@@ -4,7 +4,7 @@ import { AboutContainer, Title } from './style'
 
 export default function About() {
 	useEffect(() => {
-		console.log("coucou (About.tsx)")
+		// console.log("coucou (About.tsx)")
 	}, [])
 
 	return (

@@ -1,10 +1,12 @@
 import React from 'react'
-import { FooterContainer, Title } from './style'
+import { FooterContainer, Text } from './style'
+import Logo from '../Header/Logo'
 
 export default function Footer() {
   return (
     <FooterContainer>
-      <Title>Footer</Title>
+      <Logo $isFooter />
+      <Text>&copy; 2020 Kasa. All rights reserved</Text>
     </FooterContainer>
   )
 }
