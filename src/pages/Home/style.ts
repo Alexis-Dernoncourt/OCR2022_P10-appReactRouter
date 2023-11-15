@@ -10,7 +10,7 @@ export const Title = styled.h1`
 export const HomeContainer = styled.main`
   padding: 2rem 1.5rem;
   height: auto;
-  width: 100vw;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;

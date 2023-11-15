@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Home from './pages/Home/Home'
+import Loading from './components/Loading'
 
 export default function App() {
-	return <Home />
+	return (
+		<Suspense fallback={<Loading />}>
+			<Home />
+		</Suspense>
+	)
 }
