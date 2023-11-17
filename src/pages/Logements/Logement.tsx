@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { DropdownsContainer, Location, LogementsContainer, TagContainer, Title } from './style'
+import { DropdownsContainer, Location, LogementsContainer, TagContainer, Title, LogInfosContainer, RatingContainer } from './style'
 import { useParams } from 'react-router-dom'
 import useSWR from 'swr'
 import { getLogementById, urlEndpoint } from '../../api'
@@ -8,6 +8,7 @@ import Slider from '../../components/Slider/Slider'
 import Tag from '../../components/Tag/Tag'
 import Dropdown from '../../components/Dropdown/Dropdown'
 import Rating from '../../components/Rating/Rating'
+import Avatar from '../../components/Avatar/Avatar'
 
 export default function Logement() {
 	const params = useParams()
@@ -28,25 +29,26 @@ export default function Logement() {
 				logement && (
 					<>
 						<Slider logement={logement} />
-						<Title>{logement.title}</Title>
-						<Location>{logement?.location}</Location>
+						<LogInfosContainer>
+							<div>
+								<Title>{logement.title}</Title>
+								<Location>{logement?.location}</Location>
+								<TagContainer>
+									{
+										logement.tags.map(tag => {
+											return (
+												<Tag key={tag}>{tag}</Tag>
+											)
+										})
+									}
+								</TagContainer>
+							</div>
+							<RatingContainer>
+								<Rating rating={parseInt(logement.rating)} />
+								<Avatar user={logement.host.name} picture={logement.host.picture} />
+							</RatingContainer>
+						</LogInfosContainer>
 
-						{
-							<Rating rating={parseInt(logement.rating)} />
-						}
-
-						<p>{logement.host.name}</p>
-						<p>{logement.host.picture}</p>
-
-						<TagContainer>
-							{
-								logement.tags.map(tag => {
-									return (
-										<Tag key={tag}>{tag}</Tag>
-									)
-								})
-							}
-						</TagContainer>
 
 						<DropdownsContainer>
 							<Dropdown

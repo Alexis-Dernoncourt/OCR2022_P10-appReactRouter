@@ -4,4 +4,5 @@ import styled from 'styled-components'
 export const RatingContainer = styled.div`
   display: flex;
   width: max-content;
+  align-items: center;
 `
