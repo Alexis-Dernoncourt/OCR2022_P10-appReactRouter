@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
@@ -7,7 +7,6 @@ import AppRouter from './router'
 import { GlobalStyle } from './utils/globalStyle'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
-import Loading from './components/Loading'
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
@@ -18,9 +17,7 @@ root.render(
 		<GlobalStyle />
 		<Router>
 			<Header />
-			<Suspense fallback={<Loading />}>
-				<AppRouter />
-			</Suspense>
+			<AppRouter />
 			<Footer />
 		</Router>
 	</React.StrictMode>

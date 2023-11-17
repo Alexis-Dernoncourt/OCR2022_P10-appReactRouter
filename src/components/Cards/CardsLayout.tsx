@@ -1,5 +1,5 @@
 import React, { JSX } from 'react'
-import { CardsContainer } from './style'
+import { CardsContainer, Container } from './style'
 
 type Props = {
   children: JSX.Element[] | null
@@ -7,8 +7,10 @@ type Props = {
 
 export default function CardsLayout({ children }: Props) {
   return (
-    <CardsContainer>
-      {children}
-    </CardsContainer>
+    <Container>
+      <CardsContainer>
+        {children}
+      </CardsContainer>
+    </Container>
   )
 }
