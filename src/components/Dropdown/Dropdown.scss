@@ -6,15 +6,15 @@
 		transform: rotate(0deg);
 	}
 	60% {
-		transform: rotate(-180deg);
+		transform: rotate(180deg);
 	}
 	100% {
-		transform: rotate(-180deg);
+		transform: rotate(180deg);
 	}
 }
 @keyframes rotateAnimationReverse {
 	0% {
-		transform: rotate(-180deg);
+		transform: rotate(180deg);
 	}
 	60% {
 		transform: rotate(0deg);
@@ -53,7 +53,6 @@
 
 	& > .open {
 		animation-name: rotateAnimation;
-		animation-direction: normal;
 		animation-timing-function: ease-in-out;
 		animation-duration: 0.3s;
 		animation-fill-mode: forwards;
@@ -61,12 +60,17 @@
 	}
 	& > .closed {
 		animation-name: rotateAnimationReverse;
-		animation-direction: normal;
 		animation-timing-function: ease-in-out;
 		animation-duration: 0.3s;
 		animation-fill-mode: forwards;
 		animation-iteration-count: 1;
 		// #ff6060b8
+	}
+
+	.arrow {
+		width: 3.8rem;
+		height: 3.8rem;
+		padding: 0.5rem;
 	}
 
 	.dropdown-button-text {

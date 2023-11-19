@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react'
 import "./Dropdown.scss"
-import { LuChevronDown } from 'react-icons/lu'
+import Arrow from "./../../theme/images/arrow.svg"
+// import { LuChevronDown } from 'react-icons/lu'
 
 type DropdownProps = {
   title: string
@@ -22,12 +23,15 @@ const Dropdown = ({ title, menu }: DropdownProps) => {
     <div className='dropdown-container'>
       <button className='dropdown-button base-dropdown-btn' onClick={handleOpen}>
         <span className='dropdown-button-text'>{title}</span>
-        <LuChevronDown
-          size={38}
-          className={
+        <img
+          src={Arrow}
+          alt=""
+          className={`arrow 
+            ${
             // eslint-disable-next-line no-nested-ternary
             open && open !== "initial" ? 'open' : (open !== "initial") ? 'closed' : ''
-          } />
+            }
+          `} />
       </button>
       {open && open !== "initial" ? (
         <ul className={`dropdown-ul ${open !== "initial" && !open ? "close" : ""}`}>

@@ -12,6 +12,18 @@
 		height: 41.5rem;
 	}
 
+	.arrow {
+		height: 4rem;
+	}
+
+	.arrow-left {
+		transform: rotate(-90deg);
+	}
+
+	.arrow-right {
+		transform: rotate(90deg);
+	}
+
 	.arrow-container {
 		display: flex;
 		align-items: center;
@@ -66,7 +78,7 @@
 		bottom: 0;
 		left: 42.5vw;
 		color: $white;
-		font-weight: 700;
+		font-weight: 500;
 		margin-bottom: 2rem;
 		&.hide {
 			display: none;

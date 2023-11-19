@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import "./Slider.scss"
 import { LogementProps } from '../../types'
-import { MdArrowBackIosNew } from 'react-icons/md'
-import { MdArrowForwardIos } from 'react-icons/md'
+import Arrow from './../../theme/images/arrow.svg'
+// import { MdArrowBackIosNew } from 'react-icons/md'
+// import { MdArrowForwardIos } from 'react-icons/md'
 
 type SliderProps = {
   logement: LogementProps
@@ -28,7 +29,7 @@ const Slider = ({ logement }: SliderProps) => {
         style={{ left: 0 }}
         onClick={() => handleArrow('l')}
       >
-        <MdArrowBackIosNew style={{ width: '7em', height: '7em' }} />
+        <img src={Arrow} className='arrow arrow-left' alt='Left' />
       </div>
       <div className='slider-wrapper' style={{ transform: `translateX(-${100 / totalSlides * index}%)`, width: `${100 * totalSlides}%` }}>
         {images &&
@@ -45,7 +46,7 @@ const Slider = ({ logement }: SliderProps) => {
         style={{ right: 0 }}
         onClick={() => handleArrow('r')}
       >
-        <MdArrowForwardIos style={{ width: '7em', height: '7em' }} />
+        <img src={Arrow} className='arrow arrow-right' alt='Right' />
       </div>
     </div>
   )

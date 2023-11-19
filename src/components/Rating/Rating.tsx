@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Rating.scss"
-import { FaStar } from 'react-icons/fa'
-import { colors } from '../../utils/styleConfig'
+import ColoredStar from './../../theme/images/star-colored.svg'
+import GreyStar from './../../theme/images/star-grey.svg'
 
 type RatingProps = {
   rating: number
@@ -18,7 +18,7 @@ export default function Rating({ rating }: RatingProps) {
           rating && ratingRest.length === 0 || rating <= 5 &&
           ratingArray.map((_, i) => {
             return (
-              <FaStar key={i} size={32} color={colors.primary} />
+              <img key={i} className='star' src={ColoredStar} alt='' />
             )
           })
         }
@@ -27,7 +27,7 @@ export default function Rating({ rating }: RatingProps) {
           rating && ratingRest &&
           ratingRest.map((_, i) => {
             return (
-              <FaStar key={i * 12} size={32} color={colors.starGray} />
+              <img key={i} className='star' src={GreyStar} alt='' />
             )
           })
         }
