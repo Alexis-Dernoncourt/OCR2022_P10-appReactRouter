@@ -1,13 +1,15 @@
 import React from 'react'
 import Logo from './Logo'
 import Menu from './Menu'
-import { HeaderContainer } from './style'
+import "./Header.scss"
 
 export default function Header() {
   return (
-    <HeaderContainer>
-      <Logo $isFooter={false} />
-      <Menu />
-    </HeaderContainer>
+    <header className='header-container'>
+      <Logo />
+      <nav>
+        <Menu />
+      </nav>
+    </header>
   )
 }

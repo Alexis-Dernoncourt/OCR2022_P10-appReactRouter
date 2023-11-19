@@ -1,12 +1,12 @@
 import React from 'react'
 import { VscLoading } from "react-icons/vsc"
-import { LoaderContainer } from './style'
+import "./Loading.scss"
 import { colors } from '../../utils/styleConfig'
 
 export default function Loading() {
   return (
-    <LoaderContainer>
+    <div className='loader-container'>
       <VscLoading size={100} color={colors.primary} className='loader' />
-    </LoaderContainer>
+    </div>
   )
 }

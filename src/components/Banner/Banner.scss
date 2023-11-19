@@ -1,0 +1,58 @@
+@import "./../../theme/variables";
+@import "./../../theme/mixins";
+
+.banner-container {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: flex-start;
+	border-radius: 2.5rem;
+	height: 11.1rem;
+	width: 100%;
+	padding: 1.6rem 3.1rem;
+	background-image: url("../../../public/images/banner-img-sm.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 0 4.3rem;
+
+	&::before {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+
+	@include screen($screnn-md) {
+		padding: 0 2rem;
+	}
+
+	@include screen($screnn-lg) {
+		height: 22.3rem;
+		justify-content: center;
+		padding: 0;
+		background-image: url("../../../public/images/banner-img-xl.jpg");
+	}
+}
+.banner-text {
+	position: absolute;
+	top: 50%;
+	translate: 0 -50%;
+	color: $white;
+	font-size: $typo-sm;
+	max-width: 20rem;
+
+	@include screen($screnn-md) {
+		max-width: 35rem;
+	}
+	@include screen($screnn-lg) {
+		font-size: $typo-xl;
+		max-width: none;
+	}
+}

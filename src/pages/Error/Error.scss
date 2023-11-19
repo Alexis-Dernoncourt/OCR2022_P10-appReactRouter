@@ -1,0 +1,32 @@
+@import "./../../theme/mixins";
+@import "./../../theme/variables";
+
+.error-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5rem;
+	padding: 5rem 5.7rem;
+	text-align: center;
+
+	@include screen($screnn-lg) {
+		padding: 13rem 5.7rem;
+	}
+
+	.title {
+		color: $primary;
+		font-weight: 700;
+		line-height: 9.3rem;
+		font-size: 9.3rem;
+
+		@include screen($screnn-lg) {
+			line-height: 28.8rem;
+			font-size: 28.8rem;
+		}
+	}
+
+	.text,
+	.styled-link {
+		color: $primary !important;
+	}
+}

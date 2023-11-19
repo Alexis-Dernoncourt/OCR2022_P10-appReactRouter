@@ -1,12 +1,16 @@
 import React from 'react'
-import { MenuLink, NavContainer } from './style'
+import "./Menu.scss"
+import { Link } from 'react-router-dom'
 
 export default function Menu() {
   return (
-    <NavContainer>
-      <MenuLink to="/">Accueil</MenuLink>
-      <MenuLink to="/a-propos" >A propos</MenuLink>
-      {/* <Link to="/logements">Logements</Link> */}
-    </NavContainer>
+    <ul className='menu-container'>
+      <li>
+        <Link className='menu-link' to="/">Accueil</Link>
+      </li>
+      <li>
+        <Link className='menu-link' to="/a-propos" >A propos</Link>
+      </li>
+    </ul>
   )
 }

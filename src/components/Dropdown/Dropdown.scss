@@ -1,0 +1,126 @@
+@import "./../../theme/variables";
+@import "./../../theme/mixins";
+
+@keyframes rotateAnimation {
+	0% {
+		transform: rotate(0deg);
+	}
+	60% {
+		transform: rotate(-180deg);
+	}
+	100% {
+		transform: rotate(-180deg);
+	}
+}
+@keyframes rotateAnimationReverse {
+	0% {
+		transform: rotate(-180deg);
+	}
+	60% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes openAnimation {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}
+
+.dropdown-container {
+	width: 100%;
+	min-height: 5rem;
+}
+.dropdown-button {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 2rem;
+	width: 100%;
+	min-height: 2rem;
+	border: none;
+	border-radius: 0.5rem;
+	background-color: $primary;
+	color: $white;
+	font-size: $typo-xs !important;
+
+	& > .open {
+		animation-name: rotateAnimation;
+		animation-direction: normal;
+		animation-timing-function: ease-in-out;
+		animation-duration: 0.3s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+	}
+	& > .closed {
+		animation-name: rotateAnimationReverse;
+		animation-direction: normal;
+		animation-timing-function: ease-in-out;
+		animation-duration: 0.3s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+		// #ff6060b8
+	}
+
+	.dropdown-button-text {
+		font-weight: 500;
+		font-size: $typo-xs;
+		line-height: 2.56rem;
+
+		@include screen($screnn-xl) {
+			font-size: $typo-sm !important;
+			line-height: 3.42rem;
+		}
+	}
+}
+
+.dropdown-ul {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	background-color: $lightGrey;
+	border-radius: 0 0 0.5rem 0.5rem;
+	padding: 2rem;
+
+	animation-name: openAnimation;
+	animation-timing-function: ease-in-out;
+	animation-duration: 0.2s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	transform-origin: top;
+}
+.dropdown-item {
+	position: relative;
+	width: 100%;
+	min-height: 2rem;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	border: none;
+	justify-content: flex-start;
+	color: $primary;
+	font-size: $typo-xs;
+	line-height: 2.56rem;
+
+	&:nth-child(1) {
+		&::before {
+			content: "";
+			position: absolute;
+			top: -10px;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 10px;
+			background-color: $lightGrey;
+			z-index: -1;
+		}
+	}
+}

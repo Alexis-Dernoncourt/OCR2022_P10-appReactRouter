@@ -1,0 +1,42 @@
+@import "./../../theme/variables";
+@import "./../../theme/mixins";
+
+.menu-container {
+	display: flex;
+	align-content: center;
+	justify-content: space-between;
+	gap: 0.7rem;
+	list-style: none;
+
+	@include screen($screnn-sm) {
+		gap: 1.5rem;
+	}
+	@include screen($screnn-md) {
+		gap: 2.5rem;
+	}
+	@include screen($screnn-lg) {
+		gap: 3.7rem;
+	}
+	@include screen($screnn-xl) {
+		gap: 5rem;
+	}
+
+	.menu-link {
+		font-size: $typo-xxs;
+		font-weight: 500;
+		line-height: 1.7rem;
+		color: $primary;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		@include screen($screnn-md) {
+			font-size: $typo-sm;
+			line-height: 3.42rem;
+			text-transform: capitalize;
+		}
+	}
+}

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { AboutContainer, DropdownItem, ImageHeaderContainer } from './style'
+import "./About.scss"
 import Dropdown from '../../components/Dropdown/Dropdown'
 
 export default function About() {
@@ -8,45 +8,45 @@ export default function About() {
 	}, [])
 
 	return (
-		<AboutContainer>
-			<ImageHeaderContainer />
+		<main className='about-container'>
+			<div className='image-header-container'></div>
 
 			<Dropdown
 				title={"Fidélité"}
 				menu={[
-					<DropdownItem key={"F-fidelite"}>Fidélité</DropdownItem>,
-					<DropdownItem key={"F-respect"}>Respect</DropdownItem>,
-					<DropdownItem key={"F-service"}>Service</DropdownItem>,
-					<DropdownItem key={"F-securite"}>Sécurité</DropdownItem>,
+					<div className="dropdown-item" key={"F-fidelite"}>Fidélité</div>,
+					<div className="dropdown-item" key={"F-respect"}>Respect</div>,
+					<div className="dropdown-item" key={"F-service"}>Service</div>,
+					<div className="dropdown-item" key={"F-securite"}>Sécurité</div>,
 				]}
 			/>
 			<Dropdown
 				title={"Respect"}
 				menu={[
-					<DropdownItem key={"R-fidelite"}>Fidélité</DropdownItem>,
-					<DropdownItem key={"R-respect"}>Respect</DropdownItem>,
-					<DropdownItem key={"R-service"}>Service</DropdownItem>,
-					<DropdownItem key={"R-securite"}>Sécurité</DropdownItem>,
+					<div className="dropdown-item" key={"R-fidelite"}>Fidélité</div>,
+					<div className="dropdown-item" key={"R-respect"}>Respect</div>,
+					<div className="dropdown-item" key={"R-service"}>Service</div>,
+					<div className="dropdown-item" key={"R-securite"}>Sécurité</div>,
 				]}
 			/>
 			<Dropdown
 				title={"Service"}
 				menu={[
-					<DropdownItem key={"Ser-fidelite"}>Fidélité</DropdownItem>,
-					<DropdownItem key={"Ser-respect"}>Respect</DropdownItem>,
-					<DropdownItem key={"Ser-service"}>Service</DropdownItem>,
-					<DropdownItem key={"Ser-securite"}>Sécurité</DropdownItem>,
+					<div className="dropdown-item" key={"Ser-fidelite"}>Fidélité</div>,
+					<div className="dropdown-item" key={"Ser-respect"}>Respect</div>,
+					<div className="dropdown-item" key={"Ser-service"}>Service</div>,
+					<div className="dropdown-item" key={"Ser-securite"}>Sécurité</div>,
 				]}
 			/>
 			<Dropdown
 				title={"Sécurité"}
 				menu={[
-					<DropdownItem key={"Sec-fidelite"}>Fidélité</DropdownItem>,
-					<DropdownItem key={"Sec-respect"}>Respect</DropdownItem>,
-					<DropdownItem key={"Sec-service"}>Service</DropdownItem>,
-					<DropdownItem key={"Sec-securite"}>Sécurité</DropdownItem>,
+					<div className="dropdown-item" key={"Sec-fidelite"}>Fidélité</div>,
+					<div className="dropdown-item" key={"Sec-respect"}>Respect</div>,
+					<div className="dropdown-item" key={"Sec-service"}>Service</div>,
+					<div className="dropdown-item" key={"Sec-securite"}>Sécurité</div>,
 				]}
 			/>
-		</AboutContainer>
+		</main>
 	)
 }

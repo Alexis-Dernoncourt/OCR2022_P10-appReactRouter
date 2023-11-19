@@ -1,12 +1,12 @@
 import React from 'react'
-import { SkeletonCardItem, SkeletonCardTextContainer } from './style'
+import "./SkeletonCard.scss"
 
 
 export default function SkeletonCard() {
   // console.log('item:', item)
   return (
-    <SkeletonCardItem>
-      <SkeletonCardTextContainer />
-    </SkeletonCardItem>
+    <div className='skeleton-card-item'>
+      <div className='skeleton-card-text-container'></div>
+    </div>
   )
 }

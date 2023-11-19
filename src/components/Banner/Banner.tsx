@@ -1,12 +1,10 @@
 import React from 'react'
-import { BannerContainer, BannerText } from './style'
+import "./Banner.scss"
 
 export default function Banner() {
   return (
-    <>
-      <BannerContainer>
-        <BannerText>{`Chez vous, partout ailleurs`}</BannerText>
-      </BannerContainer>
-    </>
+    <div className='banner-container'>
+      <p className='banner-text'>Chez vous, partout ailleurs</p>
+    </div>
   )
 }

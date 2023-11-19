@@ -1,0 +1,18 @@
+@import "./../../theme/variables";
+@import "./../../theme/mixins";
+
+.avatar-container {
+	display: flex;
+	align-items: center;
+}
+.avatar-name {
+	color: $primary;
+	max-width: 9.3rem;
+	font-size: $typo-sm;
+}
+.avatar-pic {
+	width: 7rem;
+	height: 7rem;
+	border-radius: 50%;
+	color: $primary;
+}

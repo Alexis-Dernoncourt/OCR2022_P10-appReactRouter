@@ -1,12 +1,12 @@
 import React from 'react'
-import { FooterContainer, Text } from './style'
+import "./Footer.scss"
 import Logo from '../Header/Logo'
 
 export default function Footer() {
   return (
-    <FooterContainer>
-      <Logo $isFooter />
-      <Text>&copy; 2020 Kasa. All rights reserved</Text>
-    </FooterContainer>
+    <footer className='footer-container'>
+      <span className="footer-logo"><Logo /></span>
+      <p className='text'>&copy; 2020 Kasa. All rights reserved</p>
+    </footer>
   )
 }

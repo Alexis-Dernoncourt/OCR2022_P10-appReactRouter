@@ -1,5 +1,5 @@
 import React from 'react'
-import { AvatarContainer, AvatarName, AvatarPic } from './style'
+import "./Avatar.scss"
 
 type AvatarProps = {
   user: string
@@ -7,11 +7,10 @@ type AvatarProps = {
 }
 
 export default function Avatar({ user, picture }: AvatarProps) {
-
   return (
-    <AvatarContainer>
-      <AvatarName>{user}</AvatarName>
-      <AvatarPic src={picture} />
-    </AvatarContainer>
+    <div className='avatar-container'>
+      <p className='avatar-name'>{user}</p>
+      <img className='avatar-pic' src={picture} alt='' />
+    </div>
   )
 }

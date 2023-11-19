@@ -1,10 +1,14 @@
 import React from 'react'
-import { TagItem } from './style'
+import "./Tag.scss"
 
-export default function Tag({ children }: any) {
+type TagProps = {
+  children: string
+}
+
+export default function Tag({ children }: TagProps) {
   return (
-    <TagItem>
+    <div className='tag-item'>
       {children}
-    </TagItem>
+    </div>
   )
 }

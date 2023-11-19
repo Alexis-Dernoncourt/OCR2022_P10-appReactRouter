@@ -1,16 +1,16 @@
-import React, { JSX } from 'react'
-import { CardsContainer, Container } from './style'
+import React, { ReactElement } from 'react'
+import "./CardsLayout.scss"
 
-type Props = {
-  children: JSX.Element[] | null
+type CardsLayoutProps = {
+  children: ReactElement | null
 }
 
-export default function CardsLayout({ children }: Props) {
+export default function CardsLayout({ children }: CardsLayoutProps) {
   return (
-    <Container>
-      <CardsContainer>
+    <section className='container'>
+      <ul className='cards-container'>
         {children}
-      </CardsContainer>
-    </Container>
+      </ul>
+    </section>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { RatingContainer } from './style'
+import "./Rating.scss"
 import { FaStar } from 'react-icons/fa'
 import { colors } from '../../utils/styleConfig'
 
@@ -8,25 +8,30 @@ type RatingProps = {
 }
 
 export default function Rating({ rating }: RatingProps) {
-  const ratingRest = 5 - rating
+  const ratingArray = [...Array(rating)]
+  const ratingRest = [...Array(5 - rating)]
 
   return (
     <>
-      <RatingContainer>
+      <div className='rating-container'>
         {
-          ratingRest === 0 || rating <= 5 &&
-          [...Array(rating)].map(r => (
-            <FaStar key={r} size={32} color={colors.primary} />
-          ))
+          rating && ratingRest.length === 0 || rating <= 5 &&
+          ratingArray.map((_, i) => {
+            return (
+              <FaStar key={i} size={32} color={colors.primary} />
+            )
+          })
         }
 
         {
-          ratingRest &&
-          [...Array(ratingRest)].map(r => (
-            <FaStar key={r} size={32} color={colors.starGray} />
-          ))
+          rating && ratingRest &&
+          ratingRest.map((_, i) => {
+            return (
+              <FaStar key={i * 12} size={32} color={colors.starGray} />
+            )
+          })
         }
-      </RatingContainer>
+      </div>
     </>
   )
 }

@@ -1,23 +1,16 @@
 import React, { useState } from 'react'
+import "./Slider.scss"
+import { LogementProps } from '../../types'
 import { MdArrowBackIosNew } from 'react-icons/md'
 import { MdArrowForwardIos } from 'react-icons/md'
-// import { imageBlurUrl } from '../../utils/styleConfig'
-// import Img1 from '../../'
-// import Img2 from '../../images/slider/02.jpg'
-// import Img3 from '../../images/slider/03.jpg'
-import {
-  Container,
-  ArrowContainer,
-  Wrapper,
-  ImgContainer,
-  Img,
-} from './style'
 
-const Slider = (props: any) => {
-  const images = props?.logement?.pictures
-  const totalSlides = props.logement?.pictures?.length
-  console.log("Slider props:", images)
+type SliderProps = {
+  logement: LogementProps
+}
 
+const Slider = ({ logement }: SliderProps) => {
+  const images = logement?.pictures
+  const totalSlides = logement?.pictures?.length
   const [index, setIndex] = useState(0)
 
   const handleArrow = (direction: string) => {
@@ -30,31 +23,31 @@ const Slider = (props: any) => {
   }
 
   return (
-    <Container>
-      <ArrowContainer
+    <div className='slider-container'>
+      <div className={`arrow-container ${totalSlides === 1 && 'hide'}`}
         style={{ left: 0 }}
         onClick={() => handleArrow('l')}
       >
         <MdArrowBackIosNew style={{ width: '7em', height: '7em' }} />
-      </ArrowContainer>
-      <Wrapper style={{ transform: `translateX(-${100 / totalSlides * index}%)`, width: `${100 * totalSlides}%` }}>
+      </div>
+      <div className='slider-wrapper' style={{ transform: `translateX(-${100 / totalSlides * index}%)`, width: `${100 * totalSlides}%` }}>
         {images &&
-          images.map((obj: any, i: number) => (
-            <ImgContainer key={i}>
-              <Img src={obj} loading='lazy' />
-              {/* <p style={{ zIndex: 500, position: "absolute", bottom: 0, left: "42.5vw", color: "#fff", marginBottom: "4rem" }}>{`${index + 1} / ${totalSlides}`}</p> */}
-            </ImgContainer>
+          images.map((obj: string, i: number) => (
+            <div className='img-container' key={i}>
+              <img className='img' src={obj} alt='' loading='lazy' />
+            </div>
 
           ))
         }
-      </Wrapper>
-      <ArrowContainer
+      </div>
+      <p className={`slider-text ${totalSlides === 1 && 'hide'}`}>{`${index + 1} / ${totalSlides}`}</p>
+      <div className={`arrow-container ${totalSlides === 1 && 'hide'}`}
         style={{ right: 0 }}
         onClick={() => handleArrow('r')}
       >
         <MdArrowForwardIos style={{ width: '7em', height: '7em' }} />
-      </ArrowContainer>
-    </Container>
+      </div>
+    </div>
   )
 }
 

@@ -1,0 +1,15 @@
+@import "./../../theme/variables";
+@import "./../../theme/mixins";
+
+.logo-container {
+	> svg {
+		width: 14.5rem;
+		height: 4.68rem;
+		fill: $primary;
+
+		@include screen($screnn-md) {
+			width: 21.03rem;
+			height: 6.8rem;
+		}
+	}
+}

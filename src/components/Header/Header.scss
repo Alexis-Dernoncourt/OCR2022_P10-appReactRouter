@@ -1,0 +1,17 @@
+@import "./../../theme/variables";
+@import "./../../theme/mixins";
+
+.header-container {
+	height: 9.38rem;
+	padding: 0 3rem;
+	background: $white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	@include screen($screnn-lg) {
+		height: 16.3rem;
+	}
+}

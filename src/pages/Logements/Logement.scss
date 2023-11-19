@@ -1,0 +1,67 @@
+@import "./../../theme/variables";
+@import "./../../theme/mixins";
+
+.logements-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.dropdowns-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		padding: 0;
+		@include screen($screnn-xl) {
+			flex-direction: row;
+		}
+	}
+	.tag-container {
+		display: flex;
+		gap: 1rem;
+		margin: 1.5rem 0;
+		@include screen($screnn-xl) {
+			gap: 2rem;
+		}
+	}
+	.title {
+		font-size: 3.6rem;
+		line-height: 3.6rem;
+		font-weight: 500;
+		text-align: left;
+		color: $primary;
+		margin-bottom: 1rem;
+	}
+	.log-infos-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-bottom: 2rem;
+		@include screen($screnn-lg) {
+			flex-wrap: nowrap;
+		}
+	}
+	.rating-infos-container {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+
+		& > :first-child {
+			@include screen($screnn-lg) {
+				order: 2;
+			}
+		}
+
+		@include screen($screnn-lg) {
+			flex-direction: column;
+			width: max-content;
+			gap: 2rem;
+		}
+	}
+	.location {
+		font-size: 1.8rem;
+		font-weight: 400;
+		text-align: left;
+		color: $primary;
+	}
+}

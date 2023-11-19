@@ -1,0 +1,75 @@
+@import "./../../theme/variables";
+@import "./../../theme/mixins";
+
+.slider-container {
+	position: relative;
+	height: 25.5rem;
+	overflow: hidden;
+	border-radius: 1rem;
+	margin-bottom: 4rem;
+
+	@include screen($screnn-xl) {
+		height: 41.5rem;
+	}
+
+	.arrow-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		width: 15%;
+		height: 100%;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		color: $white;
+		cursor: pointer;
+		z-index: 2;
+		transition: all 0.25s ease-in-out;
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.25);
+		}
+		&.hide {
+			display: none;
+		}
+
+		@include screen($screnn-md) {
+			width: 12%;
+			color: #ffffff6e;
+		}
+		@include screen($screnn-xl) {
+			width: 8%;
+			color: #ffffff6e;
+		}
+	}
+
+	.slider-wrapper {
+		display: flex;
+		height: 100%;
+		transition: transform 0.9s ease-out;
+		.img-container {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		.img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.slider-text {
+		z-index: 500;
+		position: absolute;
+		bottom: 0;
+		left: 42.5vw;
+		color: $white;
+		font-weight: 700;
+		margin-bottom: 2rem;
+		&.hide {
+			display: none;
+		}
+	}
+}

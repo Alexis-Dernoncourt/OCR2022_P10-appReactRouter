@@ -1,10 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
+import './theme/_global.scss'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router } from 'react-router-dom'
 import AppRouter from './router'
-import { GlobalStyle } from './utils/globalStyle'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 
@@ -14,7 +13,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
 	<React.StrictMode>
-		<GlobalStyle />
 		<Router>
 			<Header />
 			<AppRouter />

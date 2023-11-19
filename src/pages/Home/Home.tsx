@@ -1,35 +1,47 @@
-import React, { Suspense } from 'react'
-import { HomeContainer } from './style'
+import React from 'react'
+import './Home.scss'
 import Banner from '../../components/Banner/Banner'
 import Card from '../../components/Cards/Card'
-import CardsLayout from '../../components/Cards/CardsLayout'
-import useSWR from 'swr'
-import { getLogements, urlEndpoint } from '../../api'
-import { LogementProps } from '../../types/index'
+import { getLogements } from '../../api'
+import { ApiProps, LogementProps } from '../../types/index'
 import SkeletonCard from '../../components/Cards/SkeletonCard'
+import { useEffect, useState } from 'react'
+import CardsLayout from '../../components/Cards/CardsLayout'
 
 export default function Home() {
-	const { isLoading, error, data: logements } = useSWR(
-		[urlEndpoint], ([urlEndpoint]) => getLogements(urlEndpoint)
-	)
-	// console.log("useSwr-datas:", isLoading, error, logements)
+	const [logements, setLogements] = useState<ApiProps | null>(null)
+	const [error, setError] = useState<boolean>(false)
+
+	async function getLogementsDatas() {
+		try {
+			const result = await getLogements()
+			if (typeof result === 'string') {
+				throw Error(result)
+			}
+			result && setLogements(result as ApiProps)
+		} catch (error) {
+			console.error("Error:", error)
+			setError(true)
+		}
+	}
+	useEffect(() => {
+		getLogementsDatas()
+	}, [])
 
 	return (
-		<HomeContainer>
+		<main className='home-container'>
 			<Banner />
 			<CardsLayout>
-				{isLoading && [1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, i) => <SkeletonCard key={i} />)}
-				{error && <p>Il y a eu une erreur...</p>}
-				{
-					<Suspense>
-						{
-							logements?.map((item: LogementProps) => (
-								<Card key={item.id} item={item} />
-							))
-						}
-					</Suspense>
-				}
+				<>
+					{error && <p>Il y a eu une erreur...</p>}
+					{!error && (!logements || logements.length === 0) && [...Array(9)].map((_, i) => <SkeletonCard key={i} />)}
+					{
+						logements?.map((item: LogementProps) => (
+							<Card key={item.id} item={item} />
+						))
+					}
+				</>
 			</CardsLayout>
-		</HomeContainer>
+		</main>
 	)
 }
