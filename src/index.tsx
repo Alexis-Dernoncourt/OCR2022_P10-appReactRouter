@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
 	<React.StrictMode>
-		<Router>
+		<Router basename="/OCR2022_P10-appReactRouter/">
 			<Header />
 			<AppRouter />
 			<Footer />
