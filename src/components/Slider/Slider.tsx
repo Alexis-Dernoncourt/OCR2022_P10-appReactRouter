@@ -25,7 +25,7 @@ const Slider = ({ logement }: SliderProps) => {
 
   return (
     <div className='slider-container'>
-      <div className={`arrow-container ${totalSlides === 1 && 'hide'}`}
+      <div className={`arrow-container left ${totalSlides === 1 && 'hide'}`}
         style={{ left: 0 }}
         onClick={() => handleArrow('l')}
       >
@@ -42,7 +42,7 @@ const Slider = ({ logement }: SliderProps) => {
         }
       </div>
       <p className={`slider-text ${totalSlides === 1 && 'hide'}`}>{`${index + 1} / ${totalSlides}`}</p>
-      <div className={`arrow-container ${totalSlides === 1 && 'hide'}`}
+      <div className={`arrow-container rigth ${totalSlides === 1 && 'hide'}`}
         style={{ right: 0 }}
         onClick={() => handleArrow('r')}
       >
