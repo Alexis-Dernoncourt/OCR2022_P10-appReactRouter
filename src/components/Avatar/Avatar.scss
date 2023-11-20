@@ -7,12 +7,24 @@
 }
 .avatar-name {
 	color: $primary;
-	max-width: 9.3rem;
-	font-size: $typo-sm;
+	font-size: $typo-xxs;
+	line-height: 1.7rem;
+	max-width: 6.3rem;
+
+	@include screen($screnn-md) {
+		max-width: 9.3rem;
+		font-size: $typo-xs;
+		line-height: 2.5rem;
+	}
 }
 .avatar-pic {
-	width: 7rem;
-	height: 7rem;
+	width: 3.2rem;
+	height: 3.2rem;
 	border-radius: 50%;
 	color: $primary;
+
+	@include screen($screnn-md) {
+		width: 6.4rem;
+		height: 6.4rem;
+	}
 }

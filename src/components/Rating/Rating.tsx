@@ -15,7 +15,7 @@ export default function Rating({ rating }: RatingProps) {
     <>
       <div className='rating-container'>
         {
-          rating && ratingRest.length === 0 || rating <= 5 &&
+          rating && (ratingRest.length === 0 || rating <= 5) &&
           ratingArray.map((_, i) => {
             return (
               <img key={i} className='star' src={ColoredStar} alt='' />

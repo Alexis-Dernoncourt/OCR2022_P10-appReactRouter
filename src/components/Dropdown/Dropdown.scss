@@ -111,8 +111,13 @@
 	border: none;
 	justify-content: flex-start;
 	color: $primary;
-	font-size: $typo-xs;
-	line-height: 2.56rem;
+	font-size: $typo-xxs;
+	line-height: 1.71rem;
+
+	@include screen($screnn-xl) {
+		font-size: $typo-xs;
+		line-height: 2.56rem;
+	}
 
 	&:nth-child(1) {
 		&::before {
