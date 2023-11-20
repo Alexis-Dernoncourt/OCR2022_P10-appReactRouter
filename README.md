@@ -35,6 +35,11 @@ and paste this rules into the .settings.json just created :
 }
 ```
 
+## 🛠️ Needed for local dev :
+Please replace <b>*basename*</b> prop of <b>*<Router .../>*</b> into <b>src/index.tsx</b> by : <b>`'/'`</b>.\
+Also replace <b>*hostname*</b> by: `http://localhost:3000` into <b>*package.json*</b> file.
+
+
 ## Available Scripts
 
 In the project directory, you can run:
