@@ -3,8 +3,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## IMPORTANT
-Add a .setting.json file into a .vscode folder and paste this rules :
+Add a .settings.json file into a .vscode folder. Should be like :
 ```
+/.vscode
+    |.settings.json
+/app-name
+    |/...rest-of-this-app
+```
+
+and paste this rules into the .settings.json just created :
+```json
 {
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
